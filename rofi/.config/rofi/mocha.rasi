@@ -1,0 +1,22 @@
+@import "colors.rasi"
+* {
+    background-color: transparent; text-color: @text; font: "JetBrainsMono Nerd Font 13";
+}
+window {
+    location: center; anchor: center;
+    width: 900px; height: 700px;
+    background-color: @base;
+    border: 2px; border-color: @mauve; border-radius: 24px;
+}
+mainbox { padding: 24px; spacing: 18px; children: [ inputbar, mode-switcher, listview ]; }
+inputbar { background-color: @surface; border-radius: 16px; padding: 14px 18px; spacing: 12px; children: [ prompt, entry ]; }
+prompt { enabled: false; }
+entry { placeholder: "Buscar aplicaciones..."; placeholder-color: @subtext; }
+mode-switcher { spacing: 10px; }
+button { padding: 10px; border-radius: 12px; background-color: @surface; text-color: @subtext; horizontal-align: 0.5; }
+button selected { background-color: @mauve; text-color: @mantle; }
+listview { columns: 3; lines: 4; scrollbar: false; spacing: 10px; cycle: true; }
+element { orientation: vertical; padding: 14px 10px; border-radius: 16px; spacing: 10px; children: [ element-icon, element-text ]; }
+element selected { background-color: #cba6f759; border: 1px; border-color: @mauve; }
+element-icon { size: 52px; horizontal-align: 0.5; }
+element-text { horizontal-align: 0.5; vertical-align: 0.5; markup: true; }

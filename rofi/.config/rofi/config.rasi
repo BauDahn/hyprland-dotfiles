@@ -1,0 +1,9 @@
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    display-drun: "Apps";
+    display-run: "Comandos";
+    drun-display-format: "{name}";
+}
+@theme "~/.config/rofi/mocha.rasi"

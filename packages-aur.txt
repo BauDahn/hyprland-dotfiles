@@ -1,0 +1,5 @@
+awww
+bibata-cursor-theme
+catppuccin-gtk-theme-mocha
+kvantum-theme-catppuccin-git
+wlogout

@@ -1,0 +1,67 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mode": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 6,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/mouse", "cpu", "memory", "temperature", "backlight", "pulseaudio", "network", "battery", "custom/sunset", "custom/notif", "tray"],
+
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "persistent-workspaces": { "*": 5 }
+    },
+    "hyprland/window": { "format": "{title}", "max-length": 40, "separate-outputs": true },
+    "clock": {
+        "format": "󰥔 {:%H:%M}",
+        "format-alt": "󰃭 {:%A, %d de %B %Y}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+    "cpu": { "interval": 5, "format": " {usage}%" },
+    "memory": { "interval": 30, "format": " {}%", "format-alt": " {used:0.1f}GiB" },
+    "temperature": { "critical-threshold": 85, "format": "{icon} {temperatureC}°C", "format-icons": ["", "", ""] },
+    "backlight": { "format": "{icon} {percent}%", "format-icons": ["󰃞", "󰃟", "󰃠"] },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 mute",
+        "format-icons": { "default": ["󰕿", "󰖀", "󰕾"] },
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "󰖩 {essid}",
+        "format-ethernet": "󰈀 {ipaddr}",
+        "format-disconnected": "󰖪 off",
+        "tooltip-format": "{ifname} · {signalStrength}%",
+        "on-click": "kitty --class clipterm -e nmtui"
+    },
+    "battery": {
+        "states": { "warning": 25, "critical": 12 },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
+    },
+    "custom/sunset": {
+        "format": "󰛨",
+        "on-click": "pkill hyprsunset || hyprsunset --temperature 5000",
+        "tooltip-format": "Filtro de luz azul (click: on/off)"
+    },
+    "custom/notif": {
+        "format": "󰂚",
+        "on-click": "swaync-client -t -sw",
+        "tooltip": false
+    },
+    "custom/mouse": {
+        "exec": "~/.config/waybar/scripts/mouse_sens.sh",
+        "return-type": "json",
+        "interval": 2,
+        "format": "󰍽 {text}",
+        "on-click": "~/.config/waybar/scripts/sens_slider.sh"
+    },
+    "tray": { "spacing": 8 }
+}

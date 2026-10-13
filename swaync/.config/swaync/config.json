@@ -1,0 +1,97 @@
+{
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-margin-top": 10,
+  "control-center-margin-right": 10,
+  "control-center-width": 420,
+  "notification-window-width": 380,
+  "timeout": 8,
+  "timeout-low": 4,
+  "timeout-critical": 0,
+  "widgets": [
+    "title",
+    "buttons-grid",
+    "volume",
+    "backlight",
+    "mpris",
+    "dnd",
+    "notifications"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Centro de control",
+      "clear-all-button": true,
+      "button-text": "Limpiar"
+    },
+    "dnd": {
+      "text": "No molestar"
+    },
+    "volume": {
+      "label": "󰕾"
+    },
+    "backlight": {
+      "label": "󰃟",
+      "device": "amdgpu_bl1"
+    },
+    "mpris": {
+      "image-size": 56,
+      "image-radius": 12
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "󰖩",
+          "type": "toggle",
+          "active": true,
+          "command": "sh -c '[ \"$SWAYNC_TOGGLE_STATE\" = true ] && nmcli radio wifi on || nmcli radio wifi off'",
+          "update-command": "sh -c '[ \"$(LC_ALL=C nmcli radio wifi)\" = enabled ] && echo true || echo false'"
+        },
+        {
+          "label": "󰂯",
+          "type": "toggle",
+          "active": true,
+          "command": "sh -c '[ \"$SWAYNC_TOGGLE_STATE\" = true ] && bluetoothctl power on || bluetoothctl power off'",
+          "update-command": "sh -c 'bluetoothctl show | grep -q \"Powered: yes\" && echo true || echo false'"
+        },
+        {
+          "label": "󰛨",
+          "type": "toggle",
+          "active": true,
+          "command": "sh -c '[ \"$SWAYNC_TOGGLE_STATE\" = true ] && (pgrep hyprsunset >/dev/null || hyprsunset --temperature 5000 &) || pkill hyprsunset'",
+          "update-command": "sh -c 'pgrep hyprsunset >/dev/null && echo true || echo false'"
+        },
+        {
+          "label": "󰍭",
+          "type": "toggle",
+          "active": false,
+          "command": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+          "update-command": "sh -c 'wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q MUTED && echo true || echo false'"
+        },
+        {
+          "label": "󰅶",
+          "type": "toggle",
+          "active": false,
+          "command": "sh -c '~/.config/hypr/scripts/keep-awake.sh \"$([ \"$SWAYNC_TOGGLE_STATE\" = true ] && echo on || echo off)\"'",
+          "update-command": "sh -c '~/.config/hypr/scripts/keep-awake.sh status'"
+        },
+        {
+          "label": "󰏘",
+          "command": "sh -c 'swaync-client -cp; ~/.config/hypr/scripts/theme.sh menu'"
+        },
+        {
+          "label": "󰸉",
+          "command": "sh -c 'swaync-client -cp; ~/.config/hypr/scripts/wallpaper.sh menu'"
+        },
+        {
+          "label": "󰹑",
+          "command": "sh -c 'swaync-client -cp; sleep 0.4; grim -g \"$(slurp)\" - | swappy -f -'"
+        },
+        {
+          "label": "󰐥",
+          "command": "sh -c 'swaync-client -cp; ~/.config/hypr/scripts/power-menu.sh'"
+        }
+      ]
+    }
+  }
+}

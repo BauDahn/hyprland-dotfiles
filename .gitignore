@@ -1,0 +1,9 @@
+*.save
+*.old
+*.bak
+*~
+*.log
+*_history
+.git-credentials
+btop/.config/btop/themes/wallust.theme
+cava/.config/cava/themes/wallust

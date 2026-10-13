@@ -1,0 +1,60 @@
+# Usa los colores ANSI de kitty, que wallust recolorea con cada fondo.
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = true
+command_timeout = 500
+
+format = """
+[╭─](bright-black)\
+[ 󰣇 ](bg:purple fg:black)\
+[](fg:purple bg:blue)\
+$directory\
+[](fg:blue bg:cyan)\
+$git_branch$git_status\
+[](fg:cyan)\
+$fill\
+$nodejs$python$rust$cmd_duration\
+$line_break\
+[╰─](bright-black)$character"""
+
+[fill]
+symbol = " "
+
+[directory]
+style = "bg:blue fg:black"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " 󰌾"
+
+[git_branch]
+symbol = ""
+style = "bg:cyan fg:black"
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "bg:cyan fg:black"
+format = "[$all_status$ahead_behind ]($style)"
+
+[nodejs]
+symbol = ""
+style = "green"
+format = "[ $symbol $version]($style)"
+
+[python]
+symbol = ""
+style = "yellow"
+format = "[ $symbol $version]($style)"
+
+[rust]
+symbol = ""
+style = "red"
+format = "[ $symbol $version]($style)"
+
+[cmd_duration]
+min_time = 2000
+style = "bright-black"
+format = "[ 󰔛 $duration]($style)"
+
+[character]
+success_symbol = "[❯](bold purple)"
+error_symbol = "[❯](bold red)"

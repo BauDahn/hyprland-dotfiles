@@ -1,0 +1,8 @@
+# wallust solo extrae la paleta del fondo; scripts/palette.py elige acentos y genera los archivos de color.
+backend = "kmeans"
+color_space = "lab"
+palette = "dark16"
+fallback_generator = "interpolate"
+
+[templates]
+palette = { template = "palette.json", target = "~/.cache/wallpaper/palette.json" }

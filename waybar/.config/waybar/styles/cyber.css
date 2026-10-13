@@ -1,0 +1,40 @@
+/* Cyberpunk: bordes angulares, acentos neón, línea inferior brillante */
+@import "colors.css";
+
+* { font-family: "JetBrainsMono Nerd Font"; font-size: 13px; font-weight: bold; border: none; border-radius: 0; min-height: 0; }
+window#waybar { background: alpha(@mantle, 0.85); color: @text; border-bottom: 2px solid @mauve; }
+
+#workspaces, #window, #clock, #custom-mouse, #cpu, #memory, #temperature,
+#backlight, #pulseaudio, #network, #battery, #custom-sunset, #custom-notif, #tray {
+    background: alpha(@base, 0.7);
+    border-left: 3px solid @mauve;
+    padding: 2px 12px; margin: 3px 3px;
+}
+#workspaces { border-left: none; padding: 0 4px; }
+#workspaces button { padding: 0 8px; color: @surface1; background: transparent; border-bottom: 2px solid transparent; transition: all 0.2s ease; }
+#workspaces button.active { color: @base; background: @mauve; }
+#workspaces button.urgent { color: @base; background: @red; }
+#workspaces button:hover { color: @blue; border-bottom: 2px solid @blue; background: transparent; }
+
+#window { color: @blue; border-left-color: @blue; }
+#clock { color: @mauve; border-left-color: @blue; }
+#cpu { color: @blue; border-left-color: @blue; }
+#memory { color: @mauve; }
+#temperature { color: @peach; border-left-color: @peach; }
+#temperature.critical { color: @red; border-left-color: @red; }
+#backlight { color: @yellow; border-left-color: @yellow; }
+#pulseaudio { color: @teal; border-left-color: @teal; }
+#pulseaudio.muted { color: @surface1; border-left-color: @surface1; }
+#network { color: @green; border-left-color: @green; }
+#network.disconnected { color: @red; border-left-color: @red; }
+#battery { color: @green; border-left-color: @green; }
+#battery.warning { color: @yellow; border-left-color: @yellow; }
+#battery.critical:not(.charging) { color: @red; border-left-color: @red; animation: blink 0.6s linear infinite alternate; }
+#custom-sunset { color: @yellow; border-left-color: @yellow; }
+#custom-notif { color: @mauve; }
+#custom-mouse { color: @subtext; border-left-color: @surface1; }
+
+@keyframes blink { to { background: alpha(@red, 0.35); } }
+
+tooltip { background: @mantle; border: 1px solid @mauve; border-radius: 0; }
+tooltip label { color: @text; }

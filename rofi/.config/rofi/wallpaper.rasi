@@ -1,0 +1,32 @@
+@theme "~/.config/rofi/mocha.rasi"
+
+configuration { show-icons: true; }
+
+window {
+    width: 1100px;
+    border: 2px;
+    border-radius: 16px;
+    border-color: @mauve;
+    background-color: @base;
+}
+mainbox { children: [ inputbar, listview ]; spacing: 12px; padding: 16px; background-color: transparent; }
+inputbar { padding: 8px 12px; border-radius: 10px; background-color: @surface; text-color: @text; children: [ prompt, entry ]; }
+prompt { background-color: transparent; text-color: @mauve; }
+entry { background-color: transparent; text-color: @text; }
+listview {
+    columns: 3;
+    lines: 3;
+    spacing: 12px;
+    fixed-columns: true;
+    background-color: transparent;
+}
+element {
+    orientation: vertical;
+    padding: 8px;
+    border-radius: 12px;
+    background-color: transparent;
+    text-color: @text;
+}
+element selected.normal { background-color: @surface; text-color: @mauve; }
+element-icon { size: 200px; horizontal-align: 0.5; background-color: transparent; }
+element-text { horizontal-align: 0.5; background-color: transparent; text-color: inherit; }
