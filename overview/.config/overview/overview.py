@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Overview a pantalla completa: la pantalla se divide en N partes iguales (una por ventana),
-cada una con la captura de la ventana sobre un fondo difuminado. Catppuccin Mocha."""
+cada una con la captura de la ventana sobre un fondo difuminado."""
 import json, math, os, subprocess
 
 import cairo
