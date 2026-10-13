@@ -2,6 +2,8 @@
 
 Un escritorio que cambia de personalidad con un atajo. Fondo, colores, barra, bordes, blur, animaciones y shaders de pantalla cambian juntos.
 
+> Personalización del sistema hecha con ayuda de Claude Code. Vibecoded, con todo lo que eso implica: funciona en mi equipo, pero no lo tomes como referencia de buenas prácticas.
+
 ![Transición entre temas](docs/demo.gif)
 
 ## Qué incluye
