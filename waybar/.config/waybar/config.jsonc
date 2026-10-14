@@ -61,7 +61,7 @@
         "return-type": "json",
         "interval": 2,
         "format": "󰍽 {text}",
-        "on-click": "~/.config/waybar/scripts/sens_slider.sh"
+        "on-click": "~/.config/waybar/scripts/sens_slider.py"
     },
     "tray": { "spacing": 8 }
 }
