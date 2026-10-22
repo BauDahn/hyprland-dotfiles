@@ -1,4 +1,4 @@
 * {
     base: #101010F0; mantle: #0A0A0A; surface: #252627; text: #E6E8F5;
-    mauve: #B482E6; blue: #82E682; subtext: #AAACB5;
+    mauve: #E6DADA; blue: #DAE6E0; subtext: #AAACB5;
 }

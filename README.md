@@ -92,6 +92,10 @@ Each folder is a stow package that mirrors its path under `$HOME`. For example, 
 - Built for an ASUS ROG notebook. `SUPER+L` opens its control center, so that keybind won't work on other machines.
 - There are no secrets in the repo. Credentials and tokens live in local files ignored by `.gitignore`.
 
+### License
+
+Released under the [MIT License](LICENSE). The wallpapers are not included and keep their own authors' rights.
+
 ### Contact
 
 Questions, ideas, or something that doesn't work? Email bdahcos@upv.edu.es
@@ -185,6 +189,10 @@ Cada carpeta del repo es un paquete de stow y espeja su ruta dentro de `$HOME`. 
 
 - Pensado para una notebook ASUS ROG. `SUPER+L` abre su control center, así que ese atajo no sirve en otro equipo.
 - No hay secretos en el repo. Credenciales y tokens viven en archivos locales ignorados por `.gitignore`.
+
+### Licencia
+
+Publicado bajo la [licencia MIT](LICENSE). Los fondos de pantalla no están incluidos y conservan los derechos de sus autores.
 
 ### Contacto
 

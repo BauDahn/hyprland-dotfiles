@@ -46,3 +46,12 @@ eza
 zoxide
 bat
 rust
+neovim
+ripgrep
+fd
+lazygit
+nodejs
+npm
+tree-sitter-cli
+wl-clipboard
+unzip

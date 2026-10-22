@@ -4,7 +4,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 sudo pacman -S --needed - < packages.txt
 yay -S --needed - < packages-aur.txt
-for pkg in hyprland waybar kitty rofi swaync hyprlock cava btop swappy qt overview bash themes zsh; do
+for pkg in hyprland waybar kitty rofi swaync hyprlock cava btop swappy qt overview bash themes zsh nvim; do
   stow -v -R --target="$HOME" "$pkg"
 done
 # wallust ya no está en los repos: se compila con cargo (queda en ~/.cargo/bin)
