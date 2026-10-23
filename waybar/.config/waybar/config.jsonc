@@ -15,7 +15,10 @@
 
     "hyprland/workspaces": {
         "format": "{id}",
-        "persistent-workspaces": { "*": 5 }
+        "persistent-workspaces": {
+            "eDP-1": [1, 4, 6, 8, 10],
+            "HDMI-A-1": [2, 3, 5, 7, 9]
+        }
     },
     "hyprland/window": { "format": "{title}", "max-length": 40, "separate-outputs": true },
     "clock": {
